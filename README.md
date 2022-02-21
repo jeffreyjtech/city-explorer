@@ -27,8 +27,8 @@
 1. **Feature #1: Setup**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 3:06 PM
-    - Finish time: -
-    - Actual time needed to complete: -
+    - Finish time: 3:39 PM
+    - Actual time needed to complete: 33 minutes
 
 2. **Feature #2: Locations**
     - Estimate of time needed to complete: 30 minutes
