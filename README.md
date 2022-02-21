@@ -24,19 +24,25 @@
 
 ### Lab 06 time estimates
 
-1. **Feature #1: Locations**
-    - Estimate of time needed to complete: 60 minutes
+1. **Feature #1: Setup**
+    - Estimate of time needed to complete: 30 minutes
     - Start time: 3:06 PM
     - Finish time: -
     - Actual time needed to complete: -
 
-2. **Feature #2: Map**
+2. **Feature #2: Locations**
+    - Estimate of time needed to complete: 30 minutes
+    - Start time:
+    - Finish time: -
+    - Actual time needed to complete: -
+
+3. **Feature #3: Map**
     - Estimate of time needed to complete: 30 minutes
     - Start time: -
     - Finish time: -
     - Actual time needed to complete: -
 
-3. **Feature #3: Error**
+4. **Feature #4: Error**
     - Estimate of time needed to complete: 30 minutes
     - Start time: -
     - Finish time: -
