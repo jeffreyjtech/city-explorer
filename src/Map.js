@@ -8,16 +8,31 @@ class Map extends React.Component {
     let locationName = this.props.locationData.display_name;
     let locationLat = this.props.locationData.lat;
     let locationLong = this.props.locationData.lon;
+    let error = this.props.error;
+    let apiKey = process.env.REACT_APP_LOCATIONIQ_API_KEY;
     
     let locationImg = (locationName === undefined) ?
-      `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=0,0&zoom=1` :
-      `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${locationLat},${locationLong}&zoom=8`;
+      `https://maps.locationiq.com/v3/staticmap?key=${apiKey}&center=0,0&zoom=1` :
+      `https://maps.locationiq.com/v3/staticmap?key=${apiKey}&center=${locationLat},${locationLong}&zoom=8`;
 
-    let errorDisplay = this.props.errorMessage ?
-      (<p className="bg-danger text-warning rounded p-1 mt-2">
-        Encountered error: {this.props.errorMessage}. Try again later
-      </p>) :
-      ''
+    let errorDisplay = (<></>); 
+    if(error){
+      if(error.response.status === 400)
+      {
+        errorDisplay = (
+          <p className="bg-warning rounded p-1 mt-2">
+            Enter a location before exploring!
+          </p>
+        )
+      }
+      else {       
+        errorDisplay = (
+          <p className="bg-danger text-warning rounded p-1 mt-2">
+          Encountered error: {error.message}. Try again.
+          </p>
+          )
+      } 
+    }
     return (
       <>
         <ListGroup>
