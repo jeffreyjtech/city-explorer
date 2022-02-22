@@ -41,3 +41,7 @@ button {
   background-color: #d2eded !important;
   border-color: #8eced5 !important;
 }
+
+code {
+  color: inherit !important;
+}
