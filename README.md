@@ -1,7 +1,8 @@
 # City Explorer
 
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Jeffrey Jenkins
+
+**Version**: 1.1.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -33,9 +34,9 @@
 
 2. **Feature #2: Locations**
     - Estimate of time needed to complete: 30 minutes
-    - Start time:
-    - Finish time: -
-    - Actual time needed to complete: -
+    - Start time: 3:39 PM
+    - Finish time: 
+    - Actual time needed to complete:
 
 3. **Feature #3: Map**
     - Estimate of time needed to complete: 30 minutes
