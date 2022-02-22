@@ -21,7 +21,7 @@ class Map extends React.Component {
     return (
       <>
         <ListGroup>
-          <ListGroup.Item>City Name: {locationName}</ListGroup.Item>
+          <ListGroup.Item>Location: {locationName}</ListGroup.Item>
           <ListGroup.Item>Lat: {locationLat}</ListGroup.Item>
           <ListGroup.Item>Long: {locationLong}</ListGroup.Item>
         </ListGroup>

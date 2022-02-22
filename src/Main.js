@@ -39,7 +39,7 @@ class Main extends React.Component {
         <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Label htmlFor="cityInput">
-              Enter city name
+              Enter location name
             </Form.Label>
             <Form.Control
               id="cityInput"
