@@ -2,7 +2,7 @@
 
 **Author**: Jeffrey Jenkins
 
-**Version**: 1.1.0
+**Version**: 1.1.1
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -35,13 +35,13 @@
 2. **Feature #2: Locations**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 3:39 PM
-    - Finish time: 
-    - Actual time needed to complete:
+    - Finish time: 4:54 PM
+    - Actual time needed to complete: 75 minutes
 
 3. **Feature #3: Map**
     - Estimate of time needed to complete: 30 minutes
-    - Start time: -
-    - Finish time: -
+    - Start time: 5:22 PM
+    - Finish time: 5:45 PM
     - Actual time needed to complete: -
 
 4. **Feature #4: Error**
