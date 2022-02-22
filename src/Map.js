@@ -29,7 +29,7 @@ class Map extends React.Component {
         <div className="text-center">
           <Image
             className="rounded-circle w-75 m-auto mt-3"
-            style={{maxWidth: "75vh"}}
+            style={{maxWidth: "65vh"}}
             useMap="#primary" 
             src={locationImg} 
             alt="{this.props.locationData.display_name}"
