@@ -26,12 +26,15 @@ class Map extends React.Component {
           <ListGroup.Item>Long: {locationLong}</ListGroup.Item>
         </ListGroup>
         {errorDisplay}
-        <Image
-          className="rounded-circle w-100 mt-3"
-          useMap="#primary" 
-          src={locationImg} 
-          alt="{this.props.locationData.display_name}"
-        />
+        <div className="text-center">
+          <Image
+            className="rounded-circle w-75 m-auto mt-3"
+            style={{maxWidth: "75vh"}}
+            useMap="#primary" 
+            src={locationImg} 
+            alt="{this.props.locationData.display_name}"
+          />
+        </div>
         <map name="primary" />
       </>
     );
