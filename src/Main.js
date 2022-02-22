@@ -10,7 +10,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locationData: {},
+      locationData: {}
     };
   }
 
@@ -50,9 +50,7 @@ class Main extends React.Component {
             </Button>
           </Form.Group>
         </Form>
-        <Map 
-          locationData={this.state.locationData} 
-        />
+        <Map locationData={this.state.locationData} />
       </main>
     );
   }

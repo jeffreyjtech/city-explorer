@@ -14,9 +14,8 @@ class Map extends React.Component {
           <li>Lat: {locationLat}</li>
           <li>Long: {locationLong}</li>
         </ul>
-        <img useMap="#primary" src={locationImg} alt="350 x 150 pic" />
-        <map name="primary">
-        </map>
+        <img useMap="#primary" src={locationImg} alt="{this.props.locationData.display_name}" />
+        <map name="primary" />
       </>
     );
   }
