@@ -22,6 +22,8 @@
 
 - Referred to [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) on the Image Map element to create the Map component.
 
+- Used Google Font [Lobster](https://fonts.google.com/specimen/Lobster)
+
 ## Test estimates
 
 ### Lab 06 time estimates
