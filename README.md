@@ -41,7 +41,7 @@
 3. **Feature #3: Map**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 5:22 PM
-    - Finish time: -
+    - Finish time: 5:45 PM
     - Actual time needed to complete: -
 
 4. **Feature #4: Error**
