@@ -36,31 +36,31 @@ class Main extends React.Component {
 
   render() { 
     return (
-      <main className="m-3 p-3 rounded w-50">
-        <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
-          <Form.Group>
-            <Form.Label htmlFor="cityInput" className="rounded p-1">
-              Enter location name
-            </Form.Label>
-            <Form.Control
-              id="cityInput"
-              type="text"
-              placeholder="Nowheresville"
-            />
-            <Button 
-              type="submit" 
-              className="mt-3"
-              variant="info"
-            >
-              Explore!
-            </Button>
-          </Form.Group>
-        </Form>
-        <Map 
-          locationData={this.state.locationData}
-          errorMessage={this.state.errorMessage} 
-        />
-      </main>
+        <main className="m-3 p-3 rounded main">
+          <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
+            <Form.Group>
+              <Form.Label htmlFor="cityInput" className="rounded p-1">
+                Enter location name
+              </Form.Label>
+              <Form.Control
+                id="cityInput"
+                type="text"
+                placeholder="Nowheresville"
+              />
+              <Button 
+                type="submit" 
+                className="mt-3"
+                variant="info"
+              >
+                Explore!
+              </Button>
+            </Form.Group>
+          </Form>
+          <Map 
+            locationData={this.state.locationData}
+            errorMessage={this.state.errorMessage} 
+          />
+        </main>
     );
   }
 }
