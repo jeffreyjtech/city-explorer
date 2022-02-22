@@ -14,7 +14,7 @@ class Map extends React.Component {
       `https://maps.locationiq.com/v3/staticmap?key=pk.aae4ebad58d64972ad596da5d8868504&center=${locationLat},${locationLong}&zoom=8`;
 
     let errorDisplay = this.props.errorMessage ?
-      (<p className="bg-danger text-warning rounded p-1">
+      (<p className="bg-danger text-warning rounded p-1 mt-2">
         Encountered error: {this.props.errorMessage}. Try again later
       </p>) :
       ''
