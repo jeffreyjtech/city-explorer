@@ -20,6 +20,7 @@ class Main extends React.Component {
       let locationIQData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${searchTerms}&format=json`);
       this.setState({
         locationData: locationIQData.data[0],
+        errorMessage: ''
       })
     } catch (error) {
       this.setState({
