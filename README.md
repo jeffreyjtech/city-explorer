@@ -42,10 +42,10 @@
     - Estimate of time needed to complete: 30 minutes
     - Start time: 5:22 PM
     - Finish time: 5:45 PM
-    - Actual time needed to complete: -
+    - Actual time needed to complete: 33 minutes
 
 4. **Feature #4: Error**
     - Estimate of time needed to complete: 30 minutes
-    - Start time: -
+    - Start time: 6:45 PM
     - Finish time: -
     - Actual time needed to complete: -
