@@ -35,12 +35,12 @@
 2. **Feature #2: Locations**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 3:39 PM
-    - Finish time: 
-    - Actual time needed to complete:
+    - Finish time: 4:54 PM
+    - Actual time needed to complete: 75 minutes
 
 3. **Feature #3: Map**
     - Estimate of time needed to complete: 30 minutes
-    - Start time: -
+    - Start time: 5:22 PM
     - Finish time: -
     - Actual time needed to complete: -
 
