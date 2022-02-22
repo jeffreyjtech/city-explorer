@@ -10,7 +10,7 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locationData: {}
+      locationData: {},
     };
   }
 
@@ -20,7 +20,7 @@ class Main extends React.Component {
       console.log(searchTerms)
       console.log(locationIQData.data)
       this.setState({
-        locationData: locationIQData.data[0]
+        locationData: locationIQData.data[0],
       })
     } catch (error) {
       console.log('syke that\'s the wrong number')
@@ -50,7 +50,9 @@ class Main extends React.Component {
             </Button>
           </Form.Group>
         </Form>
-        <Map locationData={this.state.locationData}/>
+        <Map 
+          locationData={this.state.locationData} 
+        />
       </main>
     );
   }
