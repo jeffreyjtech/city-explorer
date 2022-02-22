@@ -22,6 +22,8 @@
 
 - Referred to [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) on the Image Map element to create the Map component.
 
+- Used Google Font [Lobster](https://fonts.google.com/specimen/Lobster)
+
 ## Test estimates
 
 ### Lab 06 time estimates
@@ -47,5 +49,5 @@
 4. **Feature #4: Error**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 6:45 PM
-    - Finish time: -
-    - Actual time needed to complete: -
+    - Finish time: 7:52 PM
+    - Actual time needed to complete: 67 minutes

@@ -10,20 +10,21 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      locationData: {}
+      locationData: {},
+      errorMessage: ''
     };
   }
 
   requestData = async (searchTerms) => {
     try {
       let locationIQData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=pk.aae4ebad58d64972ad596da5d8868504&q=${searchTerms}&format=json`);
-      console.log(searchTerms)
-      console.log(locationIQData.data)
       this.setState({
         locationData: locationIQData.data[0],
       })
     } catch (error) {
-      console.log('syke that\'s the wrong number')
+      this.setState({
+        errorMessage: error.message
+      })
     }
   }
 
@@ -34,11 +35,11 @@ class Main extends React.Component {
 
   render() { 
     return (
-      <main className="m-3">
+      <main className="m-3 p-3 border border-2 w-50">
         <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
           <Form.Group>
             <Form.Label htmlFor="cityInput">
-              Enter city name
+              Enter location name
             </Form.Label>
             <Form.Control
               id="cityInput"
@@ -50,7 +51,10 @@ class Main extends React.Component {
             </Button>
           </Form.Group>
         </Form>
-        <Map locationData={this.state.locationData} />
+        <Map 
+          locationData={this.state.locationData}
+          errorMessage={this.state.errorMessage} 
+        />
       </main>
     );
   }
