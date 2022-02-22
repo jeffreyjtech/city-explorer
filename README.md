@@ -18,25 +18,32 @@
 01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+- Referred to [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) on the Image Map element to create the Map component.
 
 ## Test estimates
 
 ### Lab 06 time estimates
 
-1. **Feature #1: Locations**
-    - Estimate of time needed to complete: 60 minutes
+1. **Feature #1: Setup**
+    - Estimate of time needed to complete: 30 minutes
     - Start time: 3:06 PM
+    - Finish time: 3:39 PM
+    - Actual time needed to complete: 33 minutes
+
+2. **Feature #2: Locations**
+    - Estimate of time needed to complete: 30 minutes
+    - Start time:
     - Finish time: -
     - Actual time needed to complete: -
 
-2. **Feature #2: Map**
+3. **Feature #3: Map**
     - Estimate of time needed to complete: 30 minutes
     - Start time: -
     - Finish time: -
     - Actual time needed to complete: -
 
-3. **Feature #3: Error**
+4. **Feature #4: Error**
     - Estimate of time needed to complete: 30 minutes
     - Start time: -
     - Finish time: -
