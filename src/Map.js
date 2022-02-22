@@ -10,11 +10,11 @@ class Map extends React.Component {
     let locationLong = this.props.locationData.lon;
     
     let locationImg = (locationName === undefined) ?
-      'https://maps.locationiq.com/v3/staticmap?key=pk.aae4ebad58d64972ad596da5d8868504&center=0,0&zoom=1' :
-      `https://maps.locationiq.com/v3/staticmap?key=pk.aae4ebad58d64972ad596da5d8868504&center=${locationLat},${locationLong}&zoom=8`;
+      `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=0,0&zoom=1` :
+      `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&center=${locationLat},${locationLong}&zoom=8`;
 
     let errorDisplay = this.props.errorMessage ?
-      (<p className="bg-danger text-warning rounded p-1">
+      (<p className="bg-danger text-warning rounded p-1 mt-2">
         Encountered error: {this.props.errorMessage}. Try again later
       </p>) :
       ''
