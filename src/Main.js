@@ -16,13 +16,15 @@ class Main extends React.Component {
 
   requestData = async (searchTerms) => {
     try {
-      let locationData = await axios.get(`https://us.locationiq.com/v1/search.php?key=pk.aae4ebad58d64972ad596da5d8868504&q=${searchTerms}&format=json`);
+      let locationIQData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=pk.aae4ebad58d64972ad596da5d8868504&q=${searchTerms}&format=json`);
       console.log(searchTerms)
-      console.log(locationData)
+      console.log(locationIQData.data)
+      this.setState({
+        locationData: locationIQData.data[0]
+      })
     } catch (error) {
       console.log('syke that\'s the wrong number')
     }
-
   }
 
   handleSubmit = (e) => {
