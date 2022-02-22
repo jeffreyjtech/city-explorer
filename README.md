@@ -2,7 +2,7 @@
 
 **Author**: Jeffrey Jenkins
 
-**Version**: 1.1.1
+**Version**: 1.2.0
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
@@ -23,6 +23,12 @@
 - Referred to [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) on the Image Map element to create the Map component.
 
 - Used Google Font [Lobster](https://fonts.google.com/specimen/Lobster)
+
+## Web Request Diagram
+
+### Co-authored with Matt Rangel
+
+![Web Request Diagram](CityExplorer-diagram.png)
 
 ## Test estimates
 
