@@ -3,8 +3,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 class Error extends React.Component {
   render() {
-    let errors = this.props.errors;
-    console.log(errors)
+    let errors = Object.values(this.props.errors);
+    console.log('Errors variable stores:',errors)
 
     let errorListItems = [];
     
