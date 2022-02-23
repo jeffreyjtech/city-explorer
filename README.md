@@ -24,11 +24,15 @@
 
 - Used Google Font [Lobster](https://fonts.google.com/specimen/Lobster)
 
-## Web Request Diagram
+## Web Request Diagrams
 
-### Co-authored with Matt Rangel
+### Lab 06: Co-authored with Matt Rangel
 
-![Web Request Diagram](CityExplorer-diagram.png)
+![LocationIQ Request Diagram](assets/CityExplorer-diagram.png)
+
+### Lab 07: Co-authored with Dan Brian
+
+![Weather API Request Diagram](assets/CityExplorerLab07Diagram.png)
 
 ## Test estimates
 
@@ -57,3 +61,16 @@
     - Start time: 6:45 PM
     - Finish time: 8:30 PM
     - Actual time needed to complete: 105 minutes
+
+### Lab 07 time estimates
+
+1. **Feature #2: Weather (placeholder)**
+    - Estimate of time needed to complete: 30 minutes
+    - Start time: 10:45 PM
+    - Finish time: 11:40 PM
+    - Actual time needed to complete: 55 minutes
+. **Feature 3: Error (revisited)**
+    - Estimate of time needed to complete: 30 minutes
+    - Start time: -
+    - Finish time: -
+    - Actual time needed to complete: -
