@@ -43,6 +43,7 @@ class Main extends React.Component {
     } catch (error) {
       console.log('Weather error',error);
       this.setState({
+        forecast: {},
         forecastError: error
       })
     }
