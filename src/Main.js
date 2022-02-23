@@ -13,38 +13,40 @@ class Main extends React.Component {
     super(props);
     this.state = {
       locationData: {},
-      errors: [],
+      errors: {},
       forecast: {},
     };
   }
 
   requestData = async (searchTerms) => {
+   
     try {
-      let locationIQData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${searchTerms}&format=json`);
+      let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${searchTerms}&format=json`;
+      let locationIQData = await axios.get(url);
       this.setState({
         locationData: locationIQData.data[0],
-        errors: [...this.state.errors, {errorSource: "locationIQ", error: null}]
+        errors: {...this.state.errors, locationIQError : {errorSource: "locationIQ", error: null}}
       })
     } catch (error) {
       this.setState({
-        errors: [...this.state.errors, {errorSource: "locationIQ", error: error}]
+        errors: {...this.state.errors, locationIQError: {errorSource: "locationIQ", error: error}}
       })
     }
 
     // This try-catch block is a placeholder weather request
     try {
-      let weather = await axios.get(`http://localhost:3001/weather?searchQuery=${searchTerms}`);
+      let url = `http://localhost:3001/weather?searchQuery=${searchTerms}`;
+      let weather = await axios.get(url);
       console.log(weather);
-
       this.setState({
         forecast: weather.data[0],
-        errors: [...this.state.errors, {errorSource: "weatherAPI", error: null}]
+        errors: {...this.state.errors, weatherAPIError: {errorSource: "weatherAPI", error: null}}
       })
     } catch (error) {
       console.log('Weather error',error);
       this.setState({
         forecast: {},
-        errors: [...this.state.errors, {errorSource: "weatherAPI", error: error}]
+        errors: {...this.state.errors, weatherAPIError: {errorSource: "weatherAPI", error: error}}
       })
     }
 
