@@ -71,6 +71,6 @@
     - Actual time needed to complete: 55 minutes
 . **Feature 3: Error (revisited)**
     - Estimate of time needed to complete: 30 minutes
-    - Start time: -
-    - Finish time: -
-    - Actual time needed to complete: -
+    - Start time: 11:40 PM
+    - Finish time: 12:59 PM
+    - Actual time needed to complete: 45 minutes
