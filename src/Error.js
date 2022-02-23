@@ -7,6 +7,14 @@ class Error extends React.Component {
 
     let errorListItems = [];
 
+    for (let errorSource of Object.keys(errors)){
+      errorListItems.push(
+        <ListGroup.Item className="bg-danger text-warning rounded p-1 mt-2">
+          <code>{errorSource}</code>.
+        </ListGroup.Item>
+      );
+    }
+    
     for (let error of Object.values(errors)){
       console.log('Iterating on error:',error)
       if (error) {
@@ -14,15 +22,14 @@ class Error extends React.Component {
         if (error.response.data.error) {
           errorListItems.push(
             <ListGroup.Item className="bg-danger text-warning rounded p-1 mt-2">
-              Encountered error: <code>{error.response.data.error}</code>.
+              Encountered error: <code>{error.response.status}: {error.response.data.error}</code>.
             </ListGroup.Item>
           );
         
-        } else {
-          console.log(error)
+        } else if (typeof(error.response.data) === 'string'){
           errorListItems.push(
             <ListGroup.Item className="bg-danger text-warning rounded p-1 mt-2">
-              Encountered error: <code>{String.toString(error.response.data)}</code>. Try again.
+              Encountered error: <code>{error.response.data}</code>. Try again.
             </ListGroup.Item>
           );
         }
