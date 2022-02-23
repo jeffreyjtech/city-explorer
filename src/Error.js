@@ -5,23 +5,24 @@ class Error extends React.Component {
   render() {
     let errors = this.props.errors;
 
-    let errorList = (<></>);
+    let errorListItems = [];
 
-    for (let error in errors){
+    for (let error of Object.values(errors)){
+      console.log('Iterating on error:',error)
       if (error) {
-        console.log('Trying to display error:', error);
-        if (error.response) {
-          if (error.response.data.message === 'Weather data not found') {
-            errorList.push(
-              <ListGroup.Item className="bg-danger text-warning rounded p-1 mt-2">
-                Encountered error: <code>{error.response.data.message}</code>.
-              </ListGroup.Item>
-            );
-          }
-        } else {
-          errorList.push(
+        console.log('Trying to display error:', error.message);
+        if (error.response.data.error) {
+          errorListItems.push(
             <ListGroup.Item className="bg-danger text-warning rounded p-1 mt-2">
-              Encountered error: <code>{error.message}</code>. Try again.
+              Encountered error: <code>{error.response.data.error}</code>.
+            </ListGroup.Item>
+          );
+        
+        } else {
+          console.log(error)
+          errorListItems.push(
+            <ListGroup.Item className="bg-danger text-warning rounded p-1 mt-2">
+              Encountered error: <code>{String.toString(error.response.data)}</code>. Try again.
             </ListGroup.Item>
           );
         }
@@ -30,11 +31,9 @@ class Error extends React.Component {
 
 
     return (
-      <>
-        <ListGroup className="mb-3">
-          {errorList}
-        </ListGroup>
-      </>
+      <ListGroup className="mb-3">
+        {errorListItems}
+      </ListGroup>
     );
   };
 };
