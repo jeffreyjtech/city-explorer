@@ -8,7 +8,7 @@ class Map extends React.Component {
     let locationName = this.props.locationData.display_name;
     let locationLat = this.props.locationData.lat;
     let locationLong = this.props.locationData.lon;
-    let error = this.props.error;
+    let error = this.props.locationError;
     let apiKey = process.env.REACT_APP_LOCATIONIQ_API_KEY;
     
     let locationImg = (locationName === undefined) ?
