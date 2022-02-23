@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 
 import Map from "./Map";
 import Weather from "./Weather";
+import Error from "./Error";
 
 class Main extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class Main extends React.Component {
   }
 
   render() { 
+    console.log('Current error state:',this.state.errors)
     return (
         <main className="main m-3 p-3 rounded" style={{maxWidth: "1440px"}}>
           <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
@@ -76,13 +78,14 @@ class Main extends React.Component {
               </Button>
             </Form.Group>
           </Form>
+          <Error 
+            errors={this.state.errors}
+          />
           <Weather
              forecast={this.state.forecast}
-             forecastError={this.state.forecastError}
           />
           <Map 
             locationData={this.state.locationData}
-            locationError={this.state.locationError} 
           />
         </main>
     );
