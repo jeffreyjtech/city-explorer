@@ -1,17 +1,19 @@
 import React from "react";
 import axios from "axios";
 
-import Form from "react-bootstrap/Form"
+import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import Map from "./Map"
+import Map from "./Map";
+import Weather from "./Weather";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       locationData: {},
-      locationError: ''
+      locationError: '',
+      forecast: {}
     };
   }
 
@@ -30,8 +32,10 @@ class Main extends React.Component {
 
     // This try-catch block is a placeholder weather request
     try {
-      let weather = await axios.get(`http://http://localhost:3001/weather`);
+      let weather = await axios.get(`http://localhost:3001/weather?searchQuery=${searchTerms}`);
       console.log(weather);
+
+
     } catch (error) {
       console.log('Weather error');
     }
@@ -65,6 +69,9 @@ class Main extends React.Component {
               </Button>
             </Form.Group>
           </Form>
+          <Weather
+             forecast={this.state.forecast}
+          />
           <Map 
             locationData={this.state.locationData}
             locationError={this.state.locationError} 
