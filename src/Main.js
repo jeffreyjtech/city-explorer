@@ -11,7 +11,7 @@ class Main extends React.Component {
     super(props);
     this.state = {
       locationData: {},
-      error: ''
+      locationError: ''
     };
   }
 
@@ -20,13 +20,22 @@ class Main extends React.Component {
       let locationIQData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${searchTerms}&format=json`);
       this.setState({
         locationData: locationIQData.data[0],
-        error: ''
+        locationError: ''
       })
     } catch (error) {
       this.setState({
-        error: error
+        locationError: error
       })
     }
+
+    // This try-catch block is a placeholder weather request
+    try {
+      let weather = await axios.get(`http://http://localhost:3001/weather`);
+      console.log(weather);
+    } catch (error) {
+      console.log('Weather error');
+    }
+
   }
 
   handleSubmit = (e) => {
@@ -58,7 +67,7 @@ class Main extends React.Component {
           </Form>
           <Map 
             locationData={this.state.locationData}
-            error={this.state.error} 
+            locationError={this.state.locationError} 
           />
         </main>
     );
