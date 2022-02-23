@@ -15,25 +15,6 @@ class Map extends React.Component {
       `https://maps.locationiq.com/v3/staticmap?key=${apiKey}&center=0,0&zoom=1` :
       `https://maps.locationiq.com/v3/staticmap?key=${apiKey}&center=${locationLat},${locationLong}&zoom=8`;
 
-    let errorDisplay = (<></>); 
-    if(error) {
-      if(error.response){
-        if(error.response.status === 400) {
-          errorDisplay = (
-            <p className="bg-warning rounded p-1 mt-2">
-              Enter a location before exploring!
-            </p>
-          );
-        }
-      }
-      else {       
-        errorDisplay = (
-          <p className="bg-danger text-warning rounded p-1 mt-2">
-            Encountered error: <code>{error.message}</code>. Try again.
-          </p>
-        );
-      } 
-    }
     return (
       <>
         <ListGroup>
@@ -41,7 +22,6 @@ class Map extends React.Component {
           <ListGroup.Item>Lat: {locationLat}</ListGroup.Item>
           <ListGroup.Item>Long: {locationLong}</ListGroup.Item>
         </ListGroup>
-        {errorDisplay}
         <div className="text-center">
           <Image
             className="rounded-circle w-100 m-auto mt-3"
