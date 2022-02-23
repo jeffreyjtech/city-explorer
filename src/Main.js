@@ -12,8 +12,9 @@ class Main extends React.Component {
     super(props);
     this.state = {
       locationData: {},
-      locationError: '',
-      forecast: {}
+      locationError: null,
+      forecast: {},
+      forecastError: null,
     };
   }
 
@@ -22,7 +23,7 @@ class Main extends React.Component {
       let locationIQData = await axios.get(`https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${searchTerms}&format=json`);
       this.setState({
         locationData: locationIQData.data[0],
-        locationError: ''
+        locationError: null
       })
     } catch (error) {
       this.setState({
@@ -35,9 +36,15 @@ class Main extends React.Component {
       let weather = await axios.get(`http://localhost:3001/weather?searchQuery=${searchTerms}`);
       console.log(weather);
 
-
+      this.setState({
+        forecast: weather.data[0],
+        forecastError: null
+      })
     } catch (error) {
-      console.log('Weather error');
+      console.log('Weather error',error);
+      this.setState({
+        forecastError: error
+      })
     }
 
   }
@@ -71,6 +78,7 @@ class Main extends React.Component {
           </Form>
           <Weather
              forecast={this.state.forecast}
+             forecastError={this.state.forecastError}
           />
           <Map 
             locationData={this.state.locationData}
