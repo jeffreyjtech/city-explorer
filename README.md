@@ -93,5 +93,5 @@ The Lab 07 diagram was used with Dan Brain's permission.
 2. **Feature #2: Movies**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 8:30 PM
-    - Finish time: 
-    - Actual time needed to complete:
+    - Finish time: 11:19 PM
+    - Actual time needed to complete: 154 minutes
