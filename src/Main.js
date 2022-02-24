@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import Map from "./Map";
 import Weather from "./Weather";
 import Error from "./Error";
-import Movie from "./Movie";
+import MovieCarousel from "./MovieCarousel";
 
 class Main extends React.Component {
   constructor(props) {
@@ -151,7 +151,7 @@ class Main extends React.Component {
           </Form.Group>
         </Form>
         <Error errors={this.state.errors} />
-        <Movie movies={this.state.movies} />
+        <MovieCarousel movies={this.state.movies} />
         <Weather forecast={this.state.forecast} />
         <Map locationData={this.state.locationData} />
       </main>
