@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Map from "./Map";
 import Weather from "./Weather";
 import Error from "./Error";
+import Movie from "./Movie";
 
 class Main extends React.Component {
   constructor(props) {
@@ -73,8 +74,10 @@ class Main extends React.Component {
 
       let movies = await axios.get(url);
 
-      console.log(movies);
-      
+      this.setState({
+        movies: movies.data
+      })
+
     } catch (error) {
       console.log('Movie error', error);
       this.setState({
@@ -112,6 +115,7 @@ class Main extends React.Component {
           </Form.Group>
         </Form>
         <Error errors={this.state.errors} />
+        <Movie movies={this.state.movies} />
         <Weather forecast={this.state.forecast} />
         <Map locationData={this.state.locationData} />
       </main>
