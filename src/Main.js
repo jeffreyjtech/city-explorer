@@ -14,7 +14,7 @@ class Main extends React.Component {
     this.state = {
       locationData: {},
       errors: {},
-      forecast: {},
+      forecast: [{},{},{}],
     };
   }
 
@@ -41,9 +41,11 @@ class Main extends React.Component {
       let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}`;
 
       let weather = await axios.get(url);
-      console.log(weather);
+      // This receives an array with shape [Forecast,Forecast,Forecast]
+      // Forecasts have shape {date: String, description: String}
+
       this.setState({
-        forecast: weather.data[0],
+        forecast: weather.data,
         errors: {...this.state.errors, weatherAPIError: {errorSource: "weatherAPI", error: null}}
       })
     } catch (error) {
