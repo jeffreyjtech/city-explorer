@@ -28,7 +28,7 @@ class Main extends React.Component {
 
   requestMovieData = async (searchTerms) => {
     try {
-      let url = `https://${process.env.API_SERVER}/movies?searchTerms=${searchTerms}`;
+      let url = `https://${process.env.REACT_APP_API_SERVER}/movies?searchTerms=${searchTerms}`;
 
       let movies = await axios.get(url);
 
@@ -86,7 +86,7 @@ class Main extends React.Component {
       let lat = this.state.locationData.lat;
       let lon = this.state.locationData.lon;
 
-      let url = `https://${process.env.API_SERVER}/weather?lat=${lat}&lon=${lon}`;
+      let url = `https://${process.env.REACT_APP_API_SERVER}/weather?lat=${lat}&lon=${lon}`;
 
       let weather = await axios.get(url);
       // This receives an array with shape [Forecast,Forecast,Forecast]
