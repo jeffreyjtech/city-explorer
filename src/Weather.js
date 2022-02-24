@@ -6,9 +6,9 @@ import Col from "react-bootstrap/Col";
 
 class Weather extends React.Component {
   render() {
-    let forecast = this.props.forecast;
+    let forecasts = this.props.forecasts;
 
-    let forecastElems = forecast.map(day => ( 
+    let forecastElems = forecasts.map(day => ( 
       <Col key={day.description}>
         <ListGroup className="mb-3">
           <ListGroup.Item>Forecast date: {day.date}</ListGroup.Item>
