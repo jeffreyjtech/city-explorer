@@ -2,7 +2,7 @@
 
 **Author**: Jeffrey Jenkins
 
-**Version**: 1.4.1
+**Version**: 1.4.2
 
 ## Overview
 
@@ -98,3 +98,11 @@ The Lab 07 diagram was used with Dan Brain's permission.
     - Start time: 8:30 PM
     - Finish time: 11:19 PM
     - Actual time needed to complete: 154 minutes
+
+### Lab 09 time estimates
+
+1. **Feature #2: Componentize Front-End**
+    - Estimate of time needed to complete: 30 minutes
+    - Start time: 12:41 PM
+    - Finish time:
+    - Actual time needed to complete:
