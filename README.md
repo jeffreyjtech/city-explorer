@@ -22,6 +22,7 @@ This application shows data on location which the user has searched for, includi
 ## Credit and Collaborations
 
 - Referred to [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) on the Image Map element to create the Map component.
+- Referred to [Bootstrap Carousel doc](https://getbootstrap.com/docs/4.0/components/carousel/) to make movie poster display.
 
 - Used Google Font [Lobster](https://fonts.google.com/specimen/Lobster)
 
@@ -92,5 +93,5 @@ The Lab 07 diagram was used with Dan Brain's permission.
 2. **Feature #2: Movies**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 8:30 PM
-    - Finish time:
+    - Finish time: 
     - Actual time needed to complete:
