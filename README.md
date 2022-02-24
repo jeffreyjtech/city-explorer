@@ -104,5 +104,5 @@ The Lab 07 diagram was used with Dan Brain's permission.
 1. **Feature #2: Componentize Front-End**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 12:41 PM
-    - Finish time:
-    - Actual time needed to complete:
+    - Finish time: 3:41 PM
+    - Actual time needed to complete: 100 minutes (breaks excluded)
