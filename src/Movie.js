@@ -20,8 +20,6 @@ class Movie extends React.Component {
     let movieDataArray = this.props.movies;
 
     let carouselELems = [];
-
-    console.log(movieDataArray)
     
     if (movieDataArray){
       carouselELems = movieDataArray.map(movie => (

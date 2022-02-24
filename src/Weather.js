@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 class Weather extends React.Component {
   render() {
     let forecast = this.props.forecast;
-    console.log('Attempting to render forecasts',forecast);
 
     let forecastElems = forecast.map(day => ( 
       <Col key={day.description}>
