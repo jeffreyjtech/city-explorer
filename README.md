@@ -105,4 +105,4 @@ The Lab 07 diagram was used with Dan Brain's permission.
     - Estimate of time needed to complete: 30 minutes
     - Start time: 12:41 PM
     - Finish time: 3:41 PM
-    - Actual time needed to complete: 100 minutes
+    - Actual time needed to complete: 100 minutes (breaks excluded)
