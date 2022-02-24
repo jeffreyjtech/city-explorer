@@ -1,13 +1,11 @@
 import React from "react";
 import axios from "axios";
 
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-
 import Map from "./Map";
 import Weather from "./Weather";
 import Error from "./Error";
 import MovieCarousel from "./MovieCarousel";
+import SearchForm from "./SearchForm";
 
 class Main extends React.Component {
   constructor(props) {
@@ -112,44 +110,13 @@ class Main extends React.Component {
     }
   } 
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    try{
-      if(!e.target[0].value) throw new Error('Invalid input');
-    } catch (error) {}
-    this.requestData(this.state.inputValue);
-  };
-
-  handleInputChange = (e) => {
-    this.setState({
-      inputValue: e.target.value
-    });
-  }
-
   render() {
     return (
       <main className="main m-3 p-3 rounded" style={{ maxWidth: '1440px' }}>
-        <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
-          <Form.Group>
-            <Form.Label htmlFor="cityInput" className="rounded p-1">
-              Enter location name
-            </Form.Label>
-            <Form.Control
-              id="cityInput"
-              type="text"
-              placeholder="Nowheresville"
-              onChange={this.handleInputChange}
-            />
-            <Button 
-              type="submit" 
-              className="mt-3" 
-              variant="info"
-              disabled={!this.state.inputValue}
-            >
-              Explore!
-            </Button>
-          </Form.Group>
-        </Form>
+        
+        <SearchForm 
+          requestData={this.requestData}
+        /> 
         <Error errors={this.state.errors} />
         <MovieCarousel movies={this.state.movies} />
         <Weather forecasts={this.state.forecasts} />
