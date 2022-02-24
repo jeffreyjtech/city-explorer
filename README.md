@@ -75,7 +75,7 @@ The Lab 07 diagram was used with Dan Brain's permission.
     - Start time: 10:45 PM
     - Finish time: 11:40 PM
     - Actual time needed to complete: 55 minutes
-. **Feature #3: Error (revisited)**
+2. **Feature #3: Error (revisited)**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 11:40 PM
     - Finish time: 12:59 PM
@@ -88,7 +88,7 @@ The Lab 07 diagram was used with Dan Brain's permission.
     - Start time:
     - Finish time:
     - Actual time needed to complete:
-. **Feature #2: Movies**
+2. **Feature #2: Movies**
     - Estimate of time needed to complete:
     - Start time:
     - Finish time:
