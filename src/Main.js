@@ -152,7 +152,7 @@ class Main extends React.Component {
         </Form>
         <Error errors={this.state.errors} />
         <MovieCarousel movies={this.state.movies} />
-        <Weather forecast={this.state.forecasts} />
+        <Weather forecasts={this.state.forecasts} />
         <Map locationData={this.state.locationData} />
       </main>
     );
