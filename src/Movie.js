@@ -2,6 +2,8 @@ import React from "react";
 
 import Carousel from "react-bootstrap/Carousel";
 
+import placeholderPoster from "./placeholderPoster.png"
+
 class Movie extends React.Component {
   render() {
 
@@ -22,7 +24,9 @@ class Movie extends React.Component {
       <>
         <img
           className="d-block w-100"
-          src={movie.image_url}
+          src={movie.image_url === 'no-poster'?
+            placeholderPoster :
+            movie.image_url}
           alt={`Poster for movie ${movie.title}`}
         />
         <Carousel.Caption
