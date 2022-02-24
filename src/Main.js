@@ -16,19 +16,20 @@ class Main extends React.Component {
       locationData: {},
       errors: {},
       forecast: [{}, {}, {}],
-      movies: []
+      movies: [],
+      inputValue: ''
     };
   }
 
   requestData = async (searchTerms) => {
-    this.requestLocationData(searchTerms);
+    await this.requestLocationData(searchTerms);
     this.requestWeatherData();
     this.requestMovieData(searchTerms);
   };
 
   requestMovieData = async (searchTerms) => {
     try {
-      let url = `https://${process.env.REACT_APP_API_SERVER}/movies?searchTerms=${searchTerms}`;
+      let url = `${process.env.REACT_APP_API_SERVER}/movies?searchTerms=${searchTerms}`;
 
       let movies = await axios.get(url);
 
@@ -86,7 +87,7 @@ class Main extends React.Component {
       let lat = this.state.locationData.lat;
       let lon = this.state.locationData.lon;
 
-      let url = `https://${process.env.REACT_APP_API_SERVER}/weather?lat=${lat}&lon=${lon}`;
+      let url = `${process.env.REACT_APP_API_SERVER}/weather?lat=${lat}&lon=${lon}`;
 
       let weather = await axios.get(url);
       // This receives an array with shape [Forecast,Forecast,Forecast]
@@ -113,11 +114,19 @@ class Main extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.requestData(e.target[0].value);
+    try{
+      if(!e.target[0].value) throw new Error('Invalid input');
+    } catch (error) {}
+    this.requestData(this.state.inputValue);
   };
 
+  handleInputChange = (e) => {
+    this.setState({
+      inputValue: e.target.value
+    });
+  }
+
   render() {
-    console.log('Current error state:', this.state.errors);
     return (
       <main className="main m-3 p-3 rounded" style={{ maxWidth: '1440px' }}>
         <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
@@ -129,8 +138,14 @@ class Main extends React.Component {
               id="cityInput"
               type="text"
               placeholder="Nowheresville"
+              onChange={this.handleInputChange}
             />
-            <Button type="submit" className="mt-3" variant="info">
+            <Button 
+              type="submit" 
+              className="mt-3" 
+              variant="info"
+              disabled={!this.state.inputValue}
+            >
               Explore!
             </Button>
           </Form.Group>

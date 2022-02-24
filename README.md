@@ -22,9 +22,12 @@ This application shows data on location which the user has searched for, includi
 ## Credit and Collaborations
 
 - Referred to [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) on the Image Map element to create the Map component.
+
 - Referred to [Bootstrap Carousel doc](https://getbootstrap.com/docs/4.0/components/carousel/) to make movie poster display.
 
 - Used Google Font [Lobster](https://fonts.google.com/specimen/Lobster)
+
+- Referred to this [Reactgo.com article](https://reactgo.com/react-disable-button-input-empty/) for making a form button which is disabled when input is empty.
 
 ## Web Request Diagrams
 
