@@ -11,7 +11,7 @@ class Weather extends React.Component {
     return (
       <>
         <ListGroup className="mb-3">
-          <ListGroup.Item>Forecast time: {forecast.date}</ListGroup.Item>
+          <ListGroup.Item>Forecast date: {forecast.date}</ListGroup.Item>
           <ListGroup.Item>
             Forecast: {forecast.description}
           </ListGroup.Item>
