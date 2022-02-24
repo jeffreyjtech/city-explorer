@@ -21,6 +21,36 @@ class Main extends React.Component {
   }
 
   requestData = async (searchTerms) => {
+    this.requestLocationData(searchTerms);
+    this.requestWeatherData();
+    this.requestMovieData(searchTerms);
+  };
+
+  requestMovieData = async (searchTerms) => {
+    try {
+      let url = `http://localhost:3001/movies?searchTerms=${searchTerms}`;
+
+      let movies = await axios.get(url);
+
+      this.setState({
+        movies: movies.data,
+        errors:{
+          ...this.state.errors,
+          movieAPIError: { errorSource: 'locationIQ', error: null }}
+      });
+
+    } catch (error) {
+      this.setState({
+
+        errors: {
+          ...this.state.errors,
+          movieAPIError: { errorSource: 'movieAPI', error: error },
+        },
+      });
+    }
+  }
+
+  requestLocationData = async (searchTerms) => {
     try {
       let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${searchTerms}&format=json`;
       let locationIQData = await axios.get(url);
@@ -39,7 +69,9 @@ class Main extends React.Component {
         },
       });
     }
+  }
 
+  requestWeatherData = async () =>{
     // This try-catch block is a weather request
     try {
       let lat = this.state.locationData.lat;
@@ -50,6 +82,7 @@ class Main extends React.Component {
       let weather = await axios.get(url);
       // This receives an array with shape [Forecast,Forecast,Forecast]
       // Forecasts have shape {date: String, description: String}
+      console.log("Got weather data\n",weather.data)
 
       this.setState({
         forecast: weather.data,
@@ -59,7 +92,6 @@ class Main extends React.Component {
         },
       });
     } catch (error) {
-      console.log('Weather error', error);
       this.setState({
         forecast: [{}, {}, {}],
         errors: {
@@ -68,27 +100,7 @@ class Main extends React.Component {
         },
       });
     }
-
-    try {
-      let url = `http://localhost:3001/movies?searchTerms=${searchTerms}`;
-
-      let movies = await axios.get(url);
-
-      this.setState({
-        movies: movies.data
-      })
-
-    } catch (error) {
-      console.log('Movie error', error);
-      this.setState({
-
-        errors: {
-          ...this.state.errors,
-          movieAPIError: { errorSource: 'movieAPI', error: error },
-        },
-      });
-    }
-  };
+  } 
 
   handleSubmit = (e) => {
     e.preventDefault();
