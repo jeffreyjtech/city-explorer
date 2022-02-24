@@ -32,11 +32,13 @@ class Main extends React.Component {
 
       let movies = await axios.get(url);
 
+      console.log('Received movie data',movies);
+
       this.setState({
         movies: movies.data,
         errors:{
           ...this.state.errors,
-          movieAPIError: { errorSource: 'locationIQ', error: null }}
+          movieAPIError: { errorSource: 'movieAPI', error: null }}
       });
 
     } catch (error) {
@@ -74,6 +76,13 @@ class Main extends React.Component {
   requestWeatherData = async () =>{
     // This try-catch block is a weather request
     try {
+      console.log(this.state.locationData)
+      if (!this.state.locationData.lat){
+        let newError = new Error('Location not found');
+        newError.status = 404;
+        newError.message = 'Location not found';
+        throw newError;
+      }
       let lat = this.state.locationData.lat;
       let lon = this.state.locationData.lon;
 
