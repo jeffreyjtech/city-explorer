@@ -15,7 +15,7 @@ class Main extends React.Component {
     this.state = {
       locationData: {},
       errors: {},
-      forecast: [{}, {}, {}],
+      forecasts: [{}, {}, {}],
       movies: [],
       inputValue: ''
     };
@@ -95,7 +95,7 @@ class Main extends React.Component {
       console.log("Got weather data\n",weather.data)
 
       this.setState({
-        forecast: weather.data,
+        forecasts: weather.data,
         errors: {
           ...this.state.errors,
           weatherAPIError: { errorSource: 'weatherAPI', error: null },
@@ -103,7 +103,7 @@ class Main extends React.Component {
       });
     } catch (error) {
       this.setState({
-        forecast: [{}, {}, {}],
+        forecasts: [{}, {}, {}],
         errors: {
           ...this.state.errors,
           weatherAPIError: { errorSource: 'weatherAPI', error: error },
@@ -152,7 +152,7 @@ class Main extends React.Component {
         </Form>
         <Error errors={this.state.errors} />
         <MovieCarousel movies={this.state.movies} />
-        <Weather forecast={this.state.forecast} />
+        <Weather forecast={this.state.forecasts} />
         <Map locationData={this.state.locationData} />
       </main>
     );
