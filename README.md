@@ -5,7 +5,8 @@
 **Version**: 1.3.2
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+This application shows data on location which the user has searched for, including a rendered map of the location, a weather forecast, and movies which are are related to the location.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -21,6 +22,7 @@
 ## Credit and Collaborations
 
 - Referred to [MDN doc](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map) on the Image Map element to create the Map component.
+- Referred to [Bootstrap Carousel doc](https://getbootstrap.com/docs/4.0/components/carousel/) to make movie poster display.
 
 - Used Google Font [Lobster](https://fonts.google.com/specimen/Lobster)
 
@@ -31,6 +33,12 @@
 ![LocationIQ Request Diagram](assets/CityExplorer-diagram.png)
 
 ### Lab 07: Co-authored with Dan Brian
+
+![Weather API Request Diagram](assets/CityExplorerLab07Diagram.png)
+
+### Lab 08: An iteration on the Lab 07 diagram, co-authored with Nicholas Mercado
+
+The Lab 07 diagram was used with Dan Brain's permission.
 
 ![Weather API Request Diagram](assets/CityExplorerLab07Diagram.png)
 
@@ -69,8 +77,21 @@
     - Start time: 10:45 PM
     - Finish time: 11:40 PM
     - Actual time needed to complete: 55 minutes
-. **Feature 3: Error (revisited)**
+2. **Feature #3: Error (revisited)**
     - Estimate of time needed to complete: 30 minutes
     - Start time: 11:40 PM
     - Finish time: 12:59 PM
     - Actual time needed to complete: 45 minutes
+
+### Lab 08 time estimates
+
+1. **Feature #1: Weather (live)**
+    - Estimate of time needed to complete: 60 minutes
+    - Start time: 6:00 PM
+    - Finish time: 8:25 PM
+    - Actual time needed to complete: 100 minutes
+2. **Feature #2: Movies**
+    - Estimate of time needed to complete: 30 minutes
+    - Start time: 8:30 PM
+    - Finish time: 11:19 PM
+    - Actual time needed to complete: 154 minutes
