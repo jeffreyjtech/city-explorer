@@ -14,31 +14,37 @@ class Main extends React.Component {
     this.state = {
       locationData: {},
       errors: {},
-      forecast: [{},{},{}],
+      forecast: [{}, {}, {}],
+      movies: []
     };
   }
 
   requestData = async (searchTerms) => {
-   
     try {
       let url = `https://us1.locationiq.com/v1/search.php?key=${process.env.REACT_APP_LOCATIONIQ_API_KEY}&q=${searchTerms}&format=json`;
       let locationIQData = await axios.get(url);
       this.setState({
         locationData: locationIQData.data[0],
-        errors: {...this.state.errors, locationIQError : {errorSource: "locationIQ", error: null}}
-      })
+        errors: {
+          ...this.state.errors,
+          locationIQError: { errorSource: 'locationIQ', error: null },
+        },
+      });
     } catch (error) {
       this.setState({
-        errors: {...this.state.errors, locationIQError: {errorSource: "locationIQ", error: error}}
-      })
+        errors: {
+          ...this.state.errors,
+          locationIQError: { errorSource: 'locationIQ', error: error },
+        },
+      });
     }
 
-    // This try-catch block is a placeholder weather request
+    // This try-catch block is a weather request
     try {
       let lat = this.state.locationData.lat;
       let lon = this.state.locationData.lon;
 
-      let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}`;
+      let url = `https://localhost:3001/weather?lat=${lat}&lon=${lon}`;
 
       let weather = await axios.get(url);
       // This receives an array with shape [Forecast,Forecast,Forecast]
@@ -46,56 +52,69 @@ class Main extends React.Component {
 
       this.setState({
         forecast: weather.data,
-        errors: {...this.state.errors, weatherAPIError: {errorSource: "weatherAPI", error: null}}
-      })
+        errors: {
+          ...this.state.errors,
+          weatherAPIError: { errorSource: 'weatherAPI', error: null },
+        },
+      });
     } catch (error) {
-      console.log('Weather error',error);
+      console.log('Weather error', error);
       this.setState({
-        forecast: {},
-        errors: {...this.state.errors, weatherAPIError: {errorSource: "weatherAPI", error: error}}
-      })
+        forecast: [{}, {}, {}],
+        errors: {
+          ...this.state.errors,
+          weatherAPIError: { errorSource: 'weatherAPI', error: error },
+        },
+      });
     }
 
-  }
+    try {
+      let url = `http://localhost:3001/movies?searchTerms=${searchTerms}`;
+
+      let movies = await axios.get(url);
+
+      console.log(movies);
+      
+    } catch (error) {
+      console.log('Movie error', error);
+      this.setState({
+
+        errors: {
+          ...this.state.errors,
+          movieAPIError: { errorSource: 'movieAPI', error: error },
+        },
+      });
+    }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.requestData(e.target[0].value);
-  }
+  };
 
-  render() { 
-    console.log('Current error state:',this.state.errors)
+  render() {
+    console.log('Current error state:', this.state.errors);
     return (
-        <main className="main m-3 p-3 rounded" style={{maxWidth: "1440px"}}>
-          <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
-            <Form.Group>
-              <Form.Label htmlFor="cityInput" className="rounded p-1">
-                Enter location name
-              </Form.Label>
-              <Form.Control
-                id="cityInput"
-                type="text"
-                placeholder="Nowheresville"
-              />
-              <Button 
-                type="submit" 
-                className="mt-3"
-                variant="info"
-              >
-                Explore!
-              </Button>
-            </Form.Group>
-          </Form>
-          <Error 
-            errors={this.state.errors}
-          />
-          <Weather
-             forecast={this.state.forecast}
-          />
-          <Map 
-            locationData={this.state.locationData}
-          />
-        </main>
+      <main className="main m-3 p-3 rounded" style={{ maxWidth: '1440px' }}>
+        <Form className="w-25 mb-3" onSubmit={this.handleSubmit}>
+          <Form.Group>
+            <Form.Label htmlFor="cityInput" className="rounded p-1">
+              Enter location name
+            </Form.Label>
+            <Form.Control
+              id="cityInput"
+              type="text"
+              placeholder="Nowheresville"
+            />
+            <Button type="submit" className="mt-3" variant="info">
+              Explore!
+            </Button>
+          </Form.Group>
+        </Form>
+        <Error errors={this.state.errors} />
+        <Weather forecast={this.state.forecast} />
+        <Map locationData={this.state.locationData} />
+      </main>
     );
   }
 }
