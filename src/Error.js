@@ -1,10 +1,26 @@
 import React from "react";
+
 import ListGroup from "react-bootstrap/ListGroup";
 
 class Error extends React.Component {
   render() {
+    /* this.props.errors is an object containing objects with shape 
+      {
+        errorSourceKey: myErrorObject,
+        errorSourceKey: myErrorObject,
+        ... to the nth element
+      }
+
+      myErrorObject has shape {errorSource: String, error: Error-class object}
+    */
     let errors = Object.values(this.props.errors);
-    console.log('Errors variable stores:',errors)
+    /* After this assignment, "errors" is now an array with shape
+      [
+        {errorSource: String, error: Error-class object},
+        {errorSource: String, error: Error-class object},
+        ... to the nth element
+      ]
+    */
 
     let errorListItems = [];
     
