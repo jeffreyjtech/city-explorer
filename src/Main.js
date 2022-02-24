@@ -28,7 +28,7 @@ class Main extends React.Component {
 
   requestMovieData = async (searchTerms) => {
     try {
-      let url = `http://${process.env.API_SERVER}/movies?searchTerms=${searchTerms}`;
+      let url = `https://${process.env.API_SERVER}/movies?searchTerms=${searchTerms}`;
 
       let movies = await axios.get(url);
 
