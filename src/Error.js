@@ -12,9 +12,7 @@ class Error extends React.Component {
       let error = errorObj.error;
       let errorSource = errorObj.errorSource;
 
-      console.log('Iterating on error:',error)
       if (error) {
-        console.log('Trying to display error:', error.message);
         if (error.message) {
           errorListItems.push(
             <ListGroup.Item className="bg-danger text-warning rounded p-1 mt-2">
