@@ -34,6 +34,12 @@
 
 ![Weather API Request Diagram](assets/CityExplorerLab07Diagram.png)
 
+### Lab 08: An iteration on the Lab 07 diagram, co-authored with Nicholas Mercado
+
+The Lab 07 diagram was used with Dan Brain's permission.
+
+![Weather API Request Diagram](assets/CityExplorerLab07Diagram.png)
+
 ## Test estimates
 
 ### Lab 06 time estimates
