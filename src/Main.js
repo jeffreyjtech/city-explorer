@@ -35,7 +35,11 @@ class Main extends React.Component {
 
     // This try-catch block is a placeholder weather request
     try {
-      let url = `http://localhost:3001/weather?searchQuery=${searchTerms}`;
+      let lat = this.state.locationData.lat;
+      let lon = this.state.locationData.lon;
+
+      let url = `http://localhost:3001/weather?lat=${lat}&lon=${lon}`;
+
       let weather = await axios.get(url);
       console.log(weather);
       this.setState({
