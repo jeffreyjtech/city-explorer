@@ -40,7 +40,7 @@ This application shows data on location which the user has searched for, includi
 
 The Lab 07 diagram was used with Dan Brain's permission.
 
-![Weather API Request Diagram](assets/CityExplorerLab07Diagram.png)
+![Weather API Request Diagram](assets/Lab08Diagram.png)
 
 ## Test estimates
 
