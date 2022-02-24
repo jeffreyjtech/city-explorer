@@ -2,7 +2,7 @@
 
 **Author**: Jeffrey Jenkins
 
-**Version**: 1.3.1
+**Version**: 1.3.2
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
