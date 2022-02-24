@@ -5,7 +5,8 @@
 **Version**: 1.3.2
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
+
+This application shows data on location which the user has searched for, including a rendered map of the location, a weather forecast, and movies which are are related to the location.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
