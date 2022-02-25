@@ -1,5 +1,12 @@
-/* This CSS file contains mainly font and color styling */
+/* This CSS file contains font and color styling */
 /* Inline Bootstrap classNames were used for spacing and sizing */
+
+/* Except this element: 
+This thing right here can't be touched by inline bootstrap so here it is */
+.carousel-inner{
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
