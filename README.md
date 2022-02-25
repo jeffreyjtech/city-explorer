@@ -45,6 +45,12 @@ The Lab 07 diagram was used with Dan Brain's permission.
 
 ![Weather API Request Diagram](assets/Lab08Diagram.png)
 
+### Lab 09: An iteration on the Lab 08 diagram, co-authored with Brady Camp
+
+Server JS's functions have been broken up into modules.
+
+![Weather API Request Diagram](assets/Lab09Diagram.png)
+
 ## Test estimates
 
 ### Lab 06 time estimates
