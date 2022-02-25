@@ -20,20 +20,22 @@ class Movie extends React.Component {
     */
     let movie = this.props.movie;
 
+    if(movie.overview.length>463) movie.overview = movie.overview.slice(0,463).trim() + '...'
+
     return(
       <>
         <img
-          className="d-block w-100"
+          className="m-auto d-block shadow-lg h-100"
           src={movie.image_url === 'no-poster'?
             placeholderPoster :
             movie.image_url}
           alt={`Poster for movie ${movie.title}`}
         />
         <Carousel.Caption
-          className="m-auto shadow-lg rounded overflow-auto bg-info w-75 h-auto"
+          className="m-auto shadow-lg rounded overflow-hidden pt-2 bg-info small"
         >
-          <h3>{movie.title}</h3>
-          <p>
+          <h4>{movie.title}</h4>
+          <p className="ps-2" style={{textAlign:"justify !important"}}>
             {movie.overview}
           </p>
         </Carousel.Caption>
