@@ -25,16 +25,17 @@ class MovieCarousel extends React.Component {
     
     if (movieDataArray[0]){
       movieComponents = movieDataArray.map((movie, idx) => (
-      <Carousel.Item>
-        <Movie key={movie.title} movie={movie} />
+      <Carousel.Item className="h-100">
+        <Movie key={movie.title} movie={movie} className="h-100"/>
       </Carousel.Item>
       ));
     }
 
     return(
-      <Carousel 
-        className="w-100 m-auto mb-3"
-        style={{maxWidth: "60vh"}}
+      <Carousel
+        interval={null}
+        className="m-auto mb-3"
+        style={{height: "50vh"}}
       >
         {movieComponents}
       </Carousel>
