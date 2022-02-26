@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import Carousel from "react-bootstrap/Carousel";
+import Carousel from 'react-bootstrap/Carousel';
 
-import Movie from "./Movie";
+import Movie from './Movie';
 
 class MovieCarousel extends React.Component {
   render() {
-
     /* movie is an array of Movie objects
       Movie objects have the following shape
     {
@@ -22,24 +21,28 @@ class MovieCarousel extends React.Component {
     let movieDataArray = this.props.movies;
 
     let movieComponents = [];
-    
-    if (movieDataArray[0]){
+
+    if (movieDataArray[0]) {
       movieComponents = movieDataArray.map((movie, idx) => (
-      <Carousel.Item className="h-100">
-        <Movie key={movie.title} movie={movie} className="h-100"/>
-      </Carousel.Item>
+        <Carousel.Item className="h-100">
+          <Movie
+            key={movie.title + movie.release_date}
+            movie={movie}
+            className="h-100"
+          />
+        </Carousel.Item>
       ));
     }
 
-    return(
+    return (
       <Carousel
         interval={null}
         className="m-auto mb-3"
-        style={{height: "50vh"}}
+        style={{ height: '50vh' }}
       >
         {movieComponents}
       </Carousel>
-    )
+    );
   }
 }
 
